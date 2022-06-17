@@ -1,0 +1,779 @@
+﻿<UserControl
+    x:Class="PeepoSetup.Views.SetupView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:model="clr-namespace:PeepoSetup.Models"
+    Width="450"
+    d:DataContext="{d:DesignInstance model:RealValueSetup}"
+    d:DesignHeight="900"
+    Foreground="White"
+    mc:Ignorable="d">
+    <Grid>
+
+        <StackPanel>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock
+                    Grid.Column="0"
+                    Style="{StaticResource SetupTitle}"
+                    Text="{Binding Path=CarName}" />
+                <TextBlock
+                    Grid.Column="1"
+                    Style="{StaticResource SetupTitle}"
+                    Text="{Binding Path=Track}" />
+                <TextBlock
+                    Grid.Column="2"
+                    Style="{StaticResource SetupTitle}"
+                    Text="{Binding Path=Bop}" />
+            </Grid>
+
+            <TextBlock Style="{StaticResource SetupTitle}" Text="Generic" />
+
+            <Border Style="{StaticResource BasicBorder}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Style="{StaticResource SetupProperty}"
+                        Text="TC1" />
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Style="{StaticResource SetupValue}"
+                        Text="{Binding Tc1}" />
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Style="{StaticResource SetupProperty}"
+                        Text="TC2" />
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Style="{StaticResource SetupValue}"
+                        Text="{Binding Tc2}" />
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        Style="{StaticResource SetupProperty}"
+                        Text="ABS" />
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        Style="{StaticResource SetupValue}"
+                        Text="{Binding Abs}" />
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="3"
+                        Style="{StaticResource SetupProperty}"
+                        Text="ECU" />
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="3"
+                        Style="{StaticResource SetupValue}"
+                        Text="{Binding Ecu}" />
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="4"
+                        Style="{StaticResource SetupProperty}"
+                        Text="BB (%)" />
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="4"
+                        Style="{StaticResource SetupValue}"
+                        Text="{Binding BrakeBias}" />
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="5"
+                        Margin="3 0 3 5"
+                        Style="{StaticResource SetupProperty}"
+                        Text="Brake Power (%)" />
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="5"
+                        Style="{StaticResource SetupValue}"
+                        Text="{Binding BrakeTorque}" />
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="6"
+                        Margin="3 0 3 5"
+                        Style="{StaticResource SetupProperty}"
+                        Text="Compound"/>
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="6"
+                        Style="{StaticResource SetupValue}"
+                        Text="{Binding TyreCompound}" />
+                </Grid>
+            </Border>
+
+            <TextBlock Style="{StaticResource SetupTitle}" Text="Front" />
+
+            <Border Style="{StaticResource BasicBorder}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Style="{StaticResource SetupProperty}"
+                        Text="Ride Height (mm)" />
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Style="{StaticResource SetupValue}"
+                        Text="{Binding Path=RideHeightFront}" />
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Style="{StaticResource SetupProperty}"
+                        Text="Splitter" />
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Style="{StaticResource SetupValue}"
+                        Text="{Binding Path=Splitter}" />
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        Style="{StaticResource SetupProperty}"
+                        Text="Brake Duct" />
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        Style="{StaticResource SetupValue}"
+                        Text="{Binding Path=BrakeDuctFront}" />
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="3"
+                        Style="{StaticResource SetupProperty}"
+                        Text="Steer Ratio" />
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="3"
+                        Style="{StaticResource SetupValue}"
+                        Text="{Binding Path=SteerRatio}" />
+
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="4"
+                        Style="{StaticResource SetupProperty}"
+                        Text="ARB" />
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="4"
+                        Style="{StaticResource SetupValue}"
+                        Text="{Binding Path=ArbFront}" />
+                </Grid>
+            </Border>
+
+            <TextBlock Style="{StaticResource SetupTitle}" Text="Tyres" />
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="0" Style="{StaticResource BasicBorder}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+
+                        <!--<TextBlock
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            FontStyle="Italic"
+                            Style="{StaticResource SetupProperty}"
+                            Text="Front Left" />
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            FontStyle="Italic"
+                            Style="{StaticResource SetupProperty}"
+                            Text="Front Right" />-->
+
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Style="{StaticResource SetupProperty}"
+                            Text="Pressures (PSI)" />
+
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Style="{StaticResource SetupProperty}"
+                            Text="{Binding TyrePressures.FrontLeft, StringFormat=N1}" />
+
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            Style="{StaticResource SetupProperty}"
+                            Text="{Binding TyrePressures.FrontRight, StringFormat=N1}" />
+
+                        <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Style="{StaticResource SetupProperty}"
+                            Text="Camber (°)" />
+
+                        <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=Camber.FrontLeft, StringFormat=N1}" />
+
+                        <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="2"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=Camber.FrontRight, StringFormat=N1}" />
+
+                        <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="1"
+                            Style="{StaticResource SetupProperty}"
+                            Text="Toe (°)" />
+
+                        <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=Toe.FrontLeft, StringFormat=N2}" />
+
+                        <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="2"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=Toe.FrontRight, StringFormat=N2}" />
+
+                        <TextBlock
+                            Grid.Row="4"
+                            Grid.Column="1"
+                            Style="{StaticResource SetupProperty}"
+                            Text="Caster (click)" />
+
+                        <TextBlock
+                            Grid.Row="4"
+                            Grid.Column="0"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=CasterLeft, StringFormat=N0}" />
+
+                        <TextBlock
+                            Grid.Row="4"
+                            Grid.Column="2"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=CasterRight, StringFormat=N0}" />
+
+                        <Border
+                            Grid.Row="5"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="3"
+                            Style="{StaticResource Separation}" />
+
+                        <TextBlock
+                            Grid.Row="6"
+                            Grid.Column="1"
+                            Style="{StaticResource SetupProperty}"
+                            Text="Wheel Rate (N/m)" />
+
+                        <TextBlock
+                            Grid.Row="6"
+                            Grid.Column="0"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=WheelRate.FrontLeft}" />
+
+                        <TextBlock
+                            Grid.Row="6"
+                            Grid.Column="2"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=WheelRate.FrontRight}" />
+
+                        <TextBlock
+                            Grid.Row="7"
+                            Grid.Column="1"
+                            Style="{StaticResource SetupProperty}"
+                            Text="Bump Stop Range" />
+
+                        <TextBlock
+                            Grid.Row="7"
+                            Grid.Column="0"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=BumpStopWindow.FrontLeft}" />
+
+                        <TextBlock
+                            Grid.Row="7"
+                            Grid.Column="2"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=BumpStopWindow.FrontRight}" />
+
+                        <TextBlock
+                            Grid.Row="8"
+                            Grid.Column="1"
+                            Style="{StaticResource SetupProperty}"
+                            Text="Bump Stop Rate (N)" />
+
+                        <TextBlock
+                            Grid.Row="8"
+                            Grid.Column="0"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=BumpStopRate.FrontLeft}" />
+
+                        <TextBlock
+                            Grid.Row="8"
+                            Grid.Column="2"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=BumpStopRate.FrontRight}" />
+
+                        <Border
+                            Grid.Row="9"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="3"
+                            Style="{StaticResource Separation}" />
+
+                        <TextBlock
+                            Grid.Row="10"
+                            Grid.Column="1"
+                            Style="{StaticResource SetupProperty}"
+                            Text="Slow Bump" />
+
+                        <TextBlock
+                            Grid.Row="10"
+                            Grid.Column="0"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=BumpSlow.FrontLeft}" />
+
+                        <TextBlock
+                            Grid.Row="10"
+                            Grid.Column="2"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=BumpSlow.FrontRight}" />
+
+                        <TextBlock
+                            Grid.Row="11"
+                            Grid.Column="1"
+                            Style="{StaticResource SetupProperty}"
+                            Text="Fast Bump" />
+
+                        <TextBlock
+                            Grid.Row="11"
+                            Grid.Column="0"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=BumpFast.FrontLeft}" />
+
+                        <TextBlock
+                            Grid.Row="11"
+                            Grid.Column="2"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=BumpFast.FrontRight}" />
+
+                        <TextBlock
+                            Grid.Row="12"
+                            Grid.Column="1"
+                            Style="{StaticResource SetupProperty}"
+                            Text="Slow Rebound" />
+
+                        <TextBlock
+                            Grid.Row="12"
+                            Grid.Column="0"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=ReboundSlow.FrontLeft}" />
+
+                        <TextBlock
+                            Grid.Row="12"
+                            Grid.Column="2"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=ReboundSlow.FrontRight}" />
+
+                        <TextBlock
+                            Grid.Row="13"
+                            Grid.Column="1"
+                            Style="{StaticResource SetupProperty}"
+                            Text="Fast Rebound" />
+
+                        <TextBlock
+                            Grid.Row="13"
+                            Grid.Column="0"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=ReboundFast.FrontLeft}" />
+
+                        <TextBlock
+                            Grid.Row="13"
+                            Grid.Column="2"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=ReboundFast.FrontRight}" />
+
+                    </Grid>
+                </Border>
+
+                <Border Grid.Row="1" Style="{StaticResource BasicBorder}">
+
+                    <Grid>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+
+                        <!--<TextBlock
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            FontStyle="Italic"
+                            Style="{StaticResource SetupProperty}"
+                            Text="Rear Left" />
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            FontStyle="Italic"
+                            Style="{StaticResource SetupProperty}"
+                            Text="Rear Right" />-->
+
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Style="{StaticResource SetupProperty}"
+                            Text="Pressures (PSI)" />
+
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Style="{StaticResource SetupProperty}"
+                            Text="{Binding TyrePressures.RearLeft, StringFormat=N1}" />
+
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            Style="{StaticResource SetupProperty}"
+                            Text="{Binding TyrePressures.RearRight, StringFormat=N1}" />
+
+                        <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Style="{StaticResource SetupProperty}"
+                            Text="Camber (°)" />
+
+                        <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=Camber.RearLeft, StringFormat=N1}" />
+
+                        <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="2"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=Camber.RearRight, StringFormat=N1}" />
+
+                        <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="1"
+                            Style="{StaticResource SetupProperty}"
+                            Text="Toe (°)" />
+
+                        <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=Toe.RearLeft, StringFormat=N2}" />
+
+                        <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="2"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=Toe.RearRight, StringFormat=N2}" />
+
+                        <Border
+                            Grid.Row="4"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="3"
+                            Style="{StaticResource Separation}" />
+
+                        <TextBlock
+                            Grid.Row="5"
+                            Grid.Column="1"
+                            Style="{StaticResource SetupProperty}"
+                            Text="Wheel Rate (N/m)" />
+
+                        <TextBlock
+                            Grid.Row="5"
+                            Grid.Column="0"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=WheelRate.RearLeft}" />
+
+                        <TextBlock
+                            Grid.Row="5"
+                            Grid.Column="2"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=WheelRate.RearRight}" />
+
+                        <TextBlock
+                            Grid.Row="6"
+                            Grid.Column="1"
+                            Style="{StaticResource SetupProperty}"
+                            Text="Bump Stop Range" />
+
+                        <TextBlock
+                            Grid.Row="6"
+                            Grid.Column="0"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=BumpStopWindow.RearLeft}" />
+
+                        <TextBlock
+                            Grid.Row="6"
+                            Grid.Column="2"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=BumpStopWindow.RearRight}" />
+
+                        <TextBlock
+                            Grid.Row="7"
+                            Grid.Column="1"
+                            Style="{StaticResource SetupProperty}"
+                            Text="Bump Stop Rate (N)" />
+
+                        <TextBlock
+                            Grid.Row="7"
+                            Grid.Column="0"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=BumpStopRate.RearLeft}" />
+
+                        <TextBlock
+                            Grid.Row="7"
+                            Grid.Column="2"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=BumpStopRate.RearRight}" />
+
+                        <Border
+                            Grid.Row="8"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="3"
+                            Style="{StaticResource Separation}" />
+
+                        <TextBlock
+                            Grid.Row="9"
+                            Grid.Column="1"
+                            Style="{StaticResource SetupProperty}"
+                            Text="Slow Bump" />
+
+                        <TextBlock
+                            Grid.Row="9"
+                            Grid.Column="0"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=BumpSlow.RearLeft}" />
+
+                        <TextBlock
+                            Grid.Row="9"
+                            Grid.Column="2"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=BumpSlow.RearRight}" />
+
+                        <TextBlock
+                            Grid.Row="10"
+                            Grid.Column="1"
+                            Style="{StaticResource SetupProperty}"
+                            Text="Fast Bump" />
+
+                        <TextBlock
+                            Grid.Row="10"
+                            Grid.Column="0"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=BumpFast.RearLeft}" />
+
+                        <TextBlock
+                            Grid.Row="10"
+                            Grid.Column="2"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=BumpFast.RearRight}" />
+
+                        <TextBlock
+                            Grid.Row="11"
+                            Grid.Column="1"
+                            Style="{StaticResource SetupProperty}"
+                            Text="Slow Rebound" />
+
+                        <TextBlock
+                            Grid.Row="11"
+                            Grid.Column="0"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=ReboundSlow.RearLeft}" />
+
+                        <TextBlock
+                            Grid.Row="11"
+                            Grid.Column="2"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=ReboundSlow.RearRight}" />
+
+                        <TextBlock
+                            Grid.Row="12"
+                            Grid.Column="1"
+                            Style="{StaticResource SetupProperty}"
+                            Text="Fast Rebound" />
+
+                        <TextBlock
+                            Grid.Row="12"
+                            Grid.Column="0"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=ReboundFast.RearLeft}" />
+
+                        <TextBlock
+                            Grid.Row="12"
+                            Grid.Column="2"
+                            Style="{StaticResource SetupValue}"
+                            Text="{Binding Path=ReboundFast.RearRight}" />
+                    </Grid>
+                </Border>
+            </Grid>
+
+            <TextBlock Style="{StaticResource SetupTitle}" Text="Rear" />
+
+            <Border Style="{StaticResource BasicBorder}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Style="{StaticResource SetupProperty}"
+                        Text="Ride Height (mm)" />
+
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Style="{StaticResource SetupProperty}"
+                        Text="Wing" />
+
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        Style="{StaticResource SetupProperty}"
+                        Text="Brake Duct" />
+
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="3"
+                        Style="{StaticResource SetupProperty}"
+                        Text="Preload (Nm)" />
+
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="4"
+                        Style="{StaticResource SetupProperty}"
+                        Text="ARB" />
+
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Style="{StaticResource SetupValue}"
+                        Text="{Binding RideHeightRear}" />
+
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Style="{StaticResource SetupValue}"
+                        Text="{Binding RearWing}" />
+
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        Style="{StaticResource SetupValue}"
+                        Text="{Binding BrakeDuctRear}" />
+
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="3"
+                        Style="{StaticResource SetupValue}"
+                        Text="{Binding Preload}" />
+
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="4"
+                        Style="{StaticResource SetupValue}"
+                        Text="{Binding ArbRear}" />
+                </Grid>
+            </Border>
+        </StackPanel>
+    </Grid>
+</UserControl>

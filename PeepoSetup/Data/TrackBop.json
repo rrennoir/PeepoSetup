@@ -1,0 +1,97 @@
+﻿{
+  "1": {
+    "TrackName": "Paul Ricard",
+    "Year": 2018,
+    "Bop": "EU B"
+  },
+  "2": {
+    "TrackName": "Nürburgring",
+    "Year": 2018,
+    "Bop": "EU C"
+  },
+  "4": {
+    "TrackName": "Spa-Francorchamps",
+    "Year": 2018,
+    "Bop": "EU B2"
+  },
+  "5": {
+    "TrackName": "Barcelona",
+    "Year": 2019,
+    "Bop": "EU B3"
+  },
+  "7": {
+    "TrackName": "Paul Ricard",
+    "Year": 2019,
+    "Bop": "EU B"
+  },
+  "8": {
+    "TrackName": "Nürburgring",
+    "Year": 2019,
+    "Bop": "EU C"
+  },
+  "10": {
+    "TrackName": "Spa-Francorchamps",
+    "Year": 2019,
+    "Bop": "EU B2"
+  },
+  "11": {
+    "TrackName": "Barcelona",
+    "Year": 2019,
+    "Bop": "EU B3"
+  }, 
+  "12": {
+    "TrackName": "Bathurst",
+    "Year": 2019,
+    "Bop": "IGT A"
+  },
+  "16": {
+    "TrackName": "Kyalami",
+    "Year": 2019,
+    "Bop": "IGT E"
+  },
+  "26": {
+    "TrackName": "Paul Ricard",
+    "Year": 2020,
+    "Bop": "EU B"
+  },
+  "27": {
+    "TrackName": "Barcelona",
+    "Year": 2020,
+    "Bop": "EU C"
+  },
+  "29": {
+    "TrackName": "Spa-Francorchamps",
+    "Year": 2020,
+    "Bop": "EU B2"
+  },
+  "32": {
+    "TrackName": "Paul Ricard",
+    "Year": 2021,
+    "Bop": "EU B1"
+  },  
+  "33": {
+    "TrackName": "Spa-Francorchamps",
+    "Year": 2021,
+    "Bop": "EU B2"
+  },
+  "34": {
+    "TrackName": "Nürburgring",
+    "Year": 2021,
+    "Bop": "EU C1"
+  },
+  "35": {
+    "TrackName": "Barcelona",
+    "Year": 2021,
+    "Bop": "EU C2"
+  },
+  "39": {
+    "TrackName": "Bathurst",
+    "Year": 2021,
+    "Bop": "IGT A"
+  },  
+  "44": {
+  "TrackName": "Kyalami",
+  "Year": 2021,
+  "Bop": "IGT E"
+  }
+}
