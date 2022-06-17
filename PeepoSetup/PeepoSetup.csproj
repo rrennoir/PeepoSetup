@@ -35,7 +35,6 @@
     <Folder Include="Installer" />
     <Folder Include="logs" />
     <Folder Include="Ressources" />
-    <Folder Include="Ressources\" />
   </ItemGroup>
 
   <ItemGroup>
