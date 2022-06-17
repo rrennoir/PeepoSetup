@@ -1,4 +1,9 @@
 ﻿{
+  "0": {
+    "TrackName": "Monza",
+    "Year": 2018,
+    "Bop": "EU A"
+  },
   "1": {
     "TrackName": "Paul Ricard",
     "Year": 2018,
@@ -55,14 +60,24 @@
     "Bop": "EU B"
   },
   "27": {
-    "TrackName": "Barcelona",
+    "TrackName": "Barcelona|Silverstone|Imola",
     "Year": 2020,
     "Bop": "EU C"
+  },
+  "28": {
+    "TrackName": "Hungaroring",
+    "Year": 2020,
+    "Bop": "EU D"
   },
   "29": {
     "TrackName": "Spa-Francorchamps",
     "Year": 2020,
     "Bop": "EU B2"
+  },
+  "31": {
+    "TrackName": "Monza",
+    "Year": 2021,
+    "Bop": "EU A"
   },
   "32": {
     "TrackName": "Paul Ricard",
@@ -84,14 +99,49 @@
     "Year": 2021,
     "Bop": "EU C2"
   },
+  "36": {
+    "TrackName": "Brands Hatch|Zolder",
+    "Year": 2021,
+    "Bop": "EU D1"
+  },
+  "37": {
+    "TrackName": "Misano|Zandvoort",
+    "Year": 2021,
+    "Bop": "EU D2"
+  },
   "39": {
     "TrackName": "Bathurst",
     "Year": 2021,
     "Bop": "IGT A"
-  },  
+  },
+  "42": {
+    "TrackName": "Suzuka",
+    "Year": 2021,
+    "Bop": "IGT C"
+  },
+  "43": {
+    "TrackName": "Laguna-Seca",
+    "Year": 2021,
+    "Bop": "IGT D"
+  },
   "44": {
-  "TrackName": "Kyalami",
-  "Year": 2021,
-  "Bop": "IGT E"
+    "TrackName": "Kyalami",
+    "Year": 2021,
+    "Bop": "IGT E"
+  },
+  "45": {
+    "TrackName": "Oulton Park",
+    "Year": 2021,
+    "Bop": "BGT A"
+  },
+  "46": {
+    "TrackName": "Donington",
+    "Year": 2021,
+    "Bop": "BGT B"
+  },
+  "48": {
+    "TrackName": "Snetterton",
+    "Year": 2021,
+    "Bop": "BGT D"
   }
 }
