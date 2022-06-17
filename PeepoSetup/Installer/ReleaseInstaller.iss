@@ -7,6 +7,9 @@
 #define MyAppURL "https://github.com/rrennoir/PeepoSetup"
 #define MyAppExeName "PeepoSetup.exe"
 
+#define public Dependency_NoExampleSetup
+#include ".\CodeDependencies\CodeDependencies.iss"
+
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
@@ -29,6 +32,15 @@ SetupIconFile=C:\Users\ryanr\GitHub\PeepoSetup\PeepoSetup\PeepoSetup.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
+ArchitecturesInstallIn64BitMode=x64
+
+[Code]
+function InitializeSetup: Boolean;
+begin
+  // Add Dotnet 6.0 dependency
+  Dependency_AddDotNet60Desktop;
+  Result := True;
+end;
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
@@ -40,6 +52,7 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Source: "C:\Users\ryanr\GitHub\PeepoSetup\PeepoSetup\bin\Publish\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\ryanr\GitHub\PeepoSetup\PeepoSetup\bin\Publish\*"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\ryanr\GitHub\PeepoSetup\PeepoSetup\bin\Publish\Data\*"; DestDir: "{app}\Data"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\ryanr\GitHub\PeepoSetup\PeepoSetup\installer\CodeDependencies\netcorecheck_x64.exe"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
