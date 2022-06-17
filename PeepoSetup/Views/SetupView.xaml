@@ -11,9 +11,7 @@
     Foreground="White"
     mc:Ignorable="d">
     <Grid>
-
         <StackPanel>
-
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
@@ -25,10 +23,33 @@
                     Grid.Column="0"
                     Style="{StaticResource SetupTitle}"
                     Text="{Binding Path=CarName}" />
-                <TextBlock
+
+                <StackPanel
                     Grid.Column="1"
-                    Style="{StaticResource SetupTitle}"
-                    Text="{Binding Path=Track}" />
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource SetupTitle}" Text="{Binding Path=Track}" />
+                    <Border
+                        Width="15"
+                        Height="15"
+                        Margin="5,0"
+                        Padding="5,0"
+                        BorderBrush="White"
+                        BorderThickness="1"
+                        CornerRadius="10"
+                        ToolTip="{Binding OtherTracks}"
+                        ToolTipService.InitialShowDelay="0"
+                        Visibility="{Binding Path=IsMultiTrackBop, Converter={StaticResource BoolToVisibilityConverter}, FallbackValue=Hidden}">
+
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontSize="12"
+                            FontWeight="Bold"
+                            Text="i"
+                            TextAlignment="Center" />
+                    </Border>
+                </StackPanel>
+
                 <TextBlock
                     Grid.Column="2"
                     Style="{StaticResource SetupTitle}"
@@ -107,7 +128,7 @@
                     <TextBlock
                         Grid.Row="0"
                         Grid.Column="5"
-                        Margin="3 0 3 5"
+                        Margin="3,0,3,5"
                         Style="{StaticResource SetupProperty}"
                         Text="Brake Power (%)" />
                     <TextBlock
@@ -118,9 +139,9 @@
                     <TextBlock
                         Grid.Row="0"
                         Grid.Column="6"
-                        Margin="3 0 3 5"
+                        Margin="3,0,3,5"
                         Style="{StaticResource SetupProperty}"
-                        Text="Compound"/>
+                        Text="Compound" />
                     <TextBlock
                         Grid.Row="1"
                         Grid.Column="6"

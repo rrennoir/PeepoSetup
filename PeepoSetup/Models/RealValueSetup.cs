@@ -4,6 +4,8 @@ public record RealValueSetup
 {
     public string CarName { get; init; }
     public string Track { get; init; }
+    public string OtherTracks { get; init; }
+    public bool IsMultiTrackBop { get; init; }
     public string Bop { get; init; }
     public WheelsFloat TyrePressures { get; init; }
     public string TyreCompound { get; init; }

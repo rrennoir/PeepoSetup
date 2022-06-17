@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using PeepoSetup.Models;
 using PeepoSetup.Types;
 using PeepoSetup.Types.AccSetup;
@@ -38,11 +39,23 @@ public static class SetupConverter
 
         var track = bop is null ? "Unknown" : bop.TrackName;
         var bopType = bop is null ? "-" : $"{bop.Bop} {bop.Year}";
+        var multiTrackBop = false;
+        var otherTracks = string.Empty;
+        
+        var tracks = track.Split("|");
+        if (tracks.Length > 1)
+        {
+            track = tracks.First();
+            multiTrackBop = true;
+            otherTracks = $"This BOP is shared with: {string.Join(", ", tracks[1..])}";
+        }
 
         var realSetup = new RealValueSetup
         {
             CarName = carData.CarName,
             Track = track,
+            OtherTracks = otherTracks,
+            IsMultiTrackBop = multiTrackBop,
             Bop = bopType,
             Toe = ConvertToe(setup, carData),
             Camber = ConvertCamber(setup, carData, camberOffsetFront, camberOffsetRear),
