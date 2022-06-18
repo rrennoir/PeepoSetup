@@ -30,8 +30,7 @@ namespace PeepoSetup
             
             Log.Information("PeepoSetup starting");
             
-            // Log.Information("Checking for updates");
-            // AutoUpdater.Start("");
+            AutoUpdater.Start("http://13.38.87.128/update.xml");
 
             MainWindow = new MainWindow
             {

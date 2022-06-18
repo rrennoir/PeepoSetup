@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <item>
-    <version>1.0</version>
-    <url>https://drive.google.com/uc?export=download&amp;id=1-VhDQSIiY1CJ5BuQ-8XygMmZRbCeBxT3</url>
+    <version>0.2.0.0</version>
+    <url>http://13.38.87.128/update.zip</url>
     <changelog>https://github.com/rrennoir/PeepoSetup/releases</changelog>
-    <mandatory>false</mandatory>
+    <mandatory>true</mandatory>
 </item>
