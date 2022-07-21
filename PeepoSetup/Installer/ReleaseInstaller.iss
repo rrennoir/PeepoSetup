@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "PeepoSetup"
-#define MyAppVersion "0.2.0"
+#define MyAppVersion "0.3.0"
 #define MyAppPublisher "Ryan Rennoir"
 #define MyAppURL "https://github.com/rrennoir/PeepoSetup"
 #define MyAppExeName "PeepoSetup.exe"

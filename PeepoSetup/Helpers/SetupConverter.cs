@@ -34,8 +34,19 @@ public static class SetupConverter
         if (TrackBops.ContainsKey(setup.TrackBopType))
             bop = TrackBops[setup.TrackBopType];
 
-        var camberOffsetFront = bop?.Year < 2020 ? carData.CamberFrontOffset : BopLimits.CamberFrontOffset;
-        var camberOffsetRear = bop?.Year < 2020 ? carData.CamberRearOffset : BopLimits.CamberRearOffset;
+
+        float camberOffsetFront;
+        float camberOffsetRear;
+        if (bop is not null && bop.Year < 2020 && BopLimits.AffectedCars.Contains(setup.CarName))
+        {
+            camberOffsetFront = BopLimits.CamberFrontOffset;
+            camberOffsetRear = BopLimits.CamberRearOffset;
+        }
+        else
+        {
+            camberOffsetFront = carData.CamberFrontOffset;
+            camberOffsetRear = carData.CamberRearOffset;
+        }
 
         var track = bop is null ? "Unknown" : bop.TrackName;
         var bopType = bop is null ? "-" : $"{bop.Bop} {bop.Year}";
@@ -71,14 +82,14 @@ public static class SetupConverter
             Tc2 = setup.BasicSetup.Electronics.Tc2,
             Abs = setup.BasicSetup.Electronics.Abs,
             Ecu = setup.BasicSetup.Electronics.EcuMap + carData.EcuOffset,
-            BumpFast = new WheelsInt(setup.AdvancedSetup.Dampers.BumpFast),
-            BumpSlow = new WheelsInt(setup.AdvancedSetup.Dampers.BumpSlow),
-            ReboundFast = new WheelsInt(setup.AdvancedSetup.Dampers.ReboundFast),
-            ReboundSlow = new WheelsInt(setup.AdvancedSetup.Dampers.ReboundSlow),
+            BumpFast = ConvertDampers(setup.AdvancedSetup.Dampers.BumpFast, carData.FastBumpOffset),
+            BumpSlow = ConvertDampers(setup.AdvancedSetup.Dampers.BumpSlow, carData.BumpOffset),
+            ReboundFast = ConvertDampers(setup.AdvancedSetup.Dampers.ReboundFast, carData.FastReboundOffset),
+            ReboundSlow = ConvertDampers(setup.AdvancedSetup.Dampers.ReboundSlow, carData.ReboundOffset),
             ArbFront = setup.AdvancedSetup.MechanicalBalance.ArbFront,
             ArbRear = setup.AdvancedSetup.MechanicalBalance.ArbRear,
             TyreCompound = setup.BasicSetup.Tyres.Compound == 1 ? "Wet" : "Dry",
-            TyrePressures = new WheelsFloat(setup.BasicSetup.Tyres.Pressures, CarData.PressureOffset, 0.1f),
+            TyrePressures = new WheelsFloat(setup.BasicSetup.Tyres.Pressures, carData.PressureOffset, 0.1f),
             RideHeightFront = carData.RideHeightFrontOffset + setup.AdvancedSetup.AreoBalance.RideHeight[0],
             RideHeightRear = carData.RideHeightRearOffset + setup.AdvancedSetup.AreoBalance.RideHeight[2],
             BrakeTorque = carData.BrakeTorqueOffset + setup.AdvancedSetup.MechanicalBalance.BrakeTorque,
@@ -133,6 +144,17 @@ public static class SetupConverter
             FrontRight = bumpStopRate[1] * carData.BumpStopRateStep + carData.BumpStopRateOffset,
             RearLeft = bumpStopRate[2] * carData.BumpStopRateStep + carData.BumpStopRateOffset,
             RearRight = bumpStopRate[3] * carData.BumpStopRateStep + carData.BumpStopRateOffset,
+        };
+    }
+    
+    private static WheelsInt ConvertDampers(IReadOnlyList<int> dampers, int offset)
+    {
+        return new WheelsInt
+        {
+            FrontLeft = dampers[0] + offset,
+            FrontRight = dampers[1] + offset,
+            RearLeft = dampers[2] + offset,
+            RearRight = dampers[3] + offset,
         };
     }
 

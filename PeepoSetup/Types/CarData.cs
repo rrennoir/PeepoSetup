@@ -5,8 +5,6 @@ namespace PeepoSetup.Types;
 
 public record CarData
 {
-    public const float PressureOffset = 20.3f;
-    
     public string CarName { get; init; }
 
     public float ToeFrontOffset { get; init; }
@@ -41,4 +39,10 @@ public record CarData
     
     public int RearWingOffset { get; init; }
     public int SplitterOffset { get; init; }
+    public float PressureOffset { get; init; } = 20.3f;
+
+    public int BumpOffset { get; init; }
+    public int FastBumpOffset { get; init; }
+    public int ReboundOffset { get; init; }
+    public int FastReboundOffset { get; init; }
 }

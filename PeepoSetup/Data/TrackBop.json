@@ -10,10 +10,15 @@
     "Bop": "EU B"
   },
   "2": {
-    "TrackName": "Nürburgring",
+    "TrackName": "Nürburgring|Silverstone",
     "Year": 2018,
     "Bop": "EU C"
   },
+  "3": {
+    "TrackName": "Brands Hatch|Hungaroring|Misano|Zolder",
+    "Year": 2018,
+    "Bop": "EU D"
+},
   "4": {
     "TrackName": "Spa-Francorchamps",
     "Year": 2018,
@@ -21,18 +26,28 @@
   },
   "5": {
     "TrackName": "Barcelona",
-    "Year": 2019,
+    "Year": 2018,
     "Bop": "EU B3"
   },
+  "6": {
+    "TrackName": "Monza",
+    "Year": 2019,
+    "Bop": "EU A"
+},
   "7": {
     "TrackName": "Paul Ricard",
     "Year": 2019,
     "Bop": "EU B"
   },
   "8": {
-    "TrackName": "Nürburgring",
+    "TrackName": "Nürburgring|Silverstone|Cota (GT4)|Indianapolis (GT4)|Watkins Glen (GT4)",
     "Year": 2019,
     "Bop": "EU C"
+  },
+  "9": {
+    "TrackName": "Brands Hatch|Hungaroring|Misano",
+    "Year": 2019,
+    "Bop": "EU D"
   },
   "10": {
     "TrackName": "Spa-Francorchamps",
@@ -54,6 +69,41 @@
     "Year": 2019,
     "Bop": "IGT E"
   },
+  "19": {
+    "TrackName": "Oulton Park",
+    "Year": 2019,
+    "Bop": "BRGT A"
+  },
+  "20": {
+    "TrackName": "Donington",
+    "Year": 2019,
+    "Bop": "BRGT B"
+  },
+  "21": {
+    "TrackName": "Brands Hatch",
+    "Year": 2019,
+    "Bop": "BRGT C"
+  },
+  "22": {
+    "TrackName": "Snetterton",
+    "Year": 2019,
+    "Bop": "BRGT D"
+  },
+  "23": {
+    "TrackName": "Silverstone",
+    "Year": 2019,
+    "Bop": "BRGT E"
+  },
+  "24": {
+    "TrackName": "Spa-Francorchamp",
+    "Year": 2019,
+    "Bop": "BRGT F"
+  },
+  "25": {
+    "TrackName": "Monza",
+    "Year": 2020,
+    "Bop": "EU A"
+  },
   "26": {
     "TrackName": "Paul Ricard",
     "Year": 2020,
@@ -65,7 +115,7 @@
     "Bop": "EU C"
   },
   "28": {
-    "TrackName": "Hungaroring|Brands Hatch",
+    "TrackName": "Hungaroring|Brands Hatch|Misano|Zandvoort",
     "Year": 2020,
     "Bop": "EU D"
   },
@@ -132,16 +182,31 @@
   "45": {
     "TrackName": "Oulton Park",
     "Year": 2021,
-    "Bop": "BGT A"
+    "Bop": "BRGT A"
   },
   "46": {
     "TrackName": "Donington",
     "Year": 2021,
-    "Bop": "BGT B"
+    "Bop": "BRGT B"
   },
   "48": {
     "TrackName": "Snetterton",
     "Year": 2021,
-    "Bop": "BGT D"
+    "Bop": "BRGT D"
+  },
+  "51": {
+    "TrackName": "Indianapolis",
+    "Year": 2021,
+    "Bop": "ICGT F"
+  },
+    "52": {
+    "TrackName": "Watkins Glen",
+    "Year": 2021,
+    "Bop": "GTAM B"
+  },
+    "53": {
+    "TrackName": "Cota",
+    "Year": 2021,
+    "Bop": "GTAM C"
   }
 }
