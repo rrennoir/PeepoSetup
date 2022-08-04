@@ -3,13 +3,13 @@ using CommunityToolkit.Mvvm.Input;
 using Microsoft.Win32;
 using PeepoSetup.Models;
 using System;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Windows;
 using PeepoSetup.Helpers;
 using PeepoSetup.Types.Exceptions;
+using Serilog;
 
 namespace PeepoSetup.ViewModels;
 
@@ -23,7 +23,7 @@ public partial class MainViewModel
     [ObservableProperty] private string? _setup1Name;
 
     [ObservableProperty] private string? _setup2Name;
-    
+
     public string? AppVersion { get; } = Assembly.GetExecutingAssembly().GetName().Version?.ToString();
 
     [RelayCommand]
@@ -87,13 +87,13 @@ public partial class MainViewModel
     private static void ShowAndLogError(Exception e)
     {
         var text = $"{e.Message}\n{e.StackTrace?.Split("\n").FirstOrDefault()}";
-        Debug.WriteLine(text);
+        Log.Debug("{Error}", text);
         MessageBox.Show(text, "Unexpected error", MessageBoxButton.OK, MessageBoxImage.Error);
     }
 
     private static void ShowAndLogError(string message, string caption = "Error")
     {
-        Debug.WriteLine($"{message}");
+        Log.Debug("{Error}", message);
         MessageBox.Show($"{message}", caption, MessageBoxButton.OK, MessageBoxImage.Error);
     }
 }

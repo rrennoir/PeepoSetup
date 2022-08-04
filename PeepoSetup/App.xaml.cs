@@ -14,20 +14,22 @@ namespace PeepoSetup
     public partial class App : Application
     {
         private const int MaxLogFiles = 5;
-        
+
         protected override void OnStartup(StartupEventArgs e)
         {
             Current.Exit += OnApplicationExit;
-            
-            var logDir= AppFolder.CreateFolder("logs");
-            
+
+            var logDir = AppFolder.CreateFolder("logs");
+
             Log.Logger = new LoggerConfiguration()
+#if DEBUG
                 .WriteTo.Debug()
+#endif
                 .WriteTo.File(Path.Combine(logDir, $"{DateTime.Now:yyyy-MM-dd_HH-mm-ss}.log"))
                 .CreateLogger();
 
             DeleteOldLogsFiles(logDir);
-            
+
             Log.Information("PeepoSetup starting");
 
             AutoUpdater.RunUpdateAsAdmin = false;
@@ -38,10 +40,10 @@ namespace PeepoSetup
             {
                 DataContext = new MainViewModel(),
             };
-            
+
             MainWindow.Show();
             Log.Information("PeepoSetup started");
-        
+
             base.OnStartup(e);
         }
 
@@ -49,10 +51,10 @@ namespace PeepoSetup
         {
             var files = Directory.GetFiles(logDir);
             if (files.Length < MaxLogFiles) return;
-            
+
             foreach (var file in files[..^MaxLogFiles])
             {
-                Log.Information($"Deleting log file: {file}");   
+                Log.Information("Deleting log file: {File}", file);
                 File.Delete(file);
             }
         }
