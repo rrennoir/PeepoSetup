@@ -31,7 +31,7 @@ namespace PeepoSetup
             Log.Information("PeepoSetup starting");
 
             AutoUpdater.RunUpdateAsAdmin = false;
-            AutoUpdater.ReportErrors = true;
+            // AutoUpdater.ReportErrors = true;
             AutoUpdater.Start("http://peeposetup.skillissue.be/update.xml");
 
             MainWindow = new MainWindow
