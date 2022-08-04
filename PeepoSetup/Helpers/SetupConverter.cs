@@ -37,7 +37,7 @@ public static class SetupConverter
 
         float camberOffsetFront;
         float camberOffsetRear;
-        if (bop is not null && bop.Year < 2020 && BopLimits.AffectedCars.Contains(setup.CarName))
+        if (bop is not null && bop.Year >= 2020 && BopLimits.AffectedCars.Contains(setup.CarName))
         {
             camberOffsetFront = BopLimits.CamberFrontOffset;
             camberOffsetRear = BopLimits.CamberRearOffset;

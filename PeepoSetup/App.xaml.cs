@@ -29,8 +29,10 @@ namespace PeepoSetup
             DeleteOldLogsFiles(logDir);
             
             Log.Information("PeepoSetup starting");
-            
-            AutoUpdater.Start("http://13.38.87.128/update.xml");
+
+            AutoUpdater.RunUpdateAsAdmin = false;
+            AutoUpdater.ReportErrors = true;
+            AutoUpdater.Start("http://peeposetup.skillissue.be/update.xml");
 
             MainWindow = new MainWindow
             {

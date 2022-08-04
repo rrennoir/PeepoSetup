@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <item>
-    <version>0.2.0.0</version>
-    <url>http://13.38.87.128/update.zip</url>
+    <version>0.3.0.1</version>
+    <url>http://peeposetup.skillissue.be/update.zip</url>
     <changelog>https://github.com/rrennoir/PeepoSetup/releases</changelog>
     <mandatory>true</mandatory>
 </item>
